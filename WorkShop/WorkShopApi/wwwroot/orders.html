@@ -1,0 +1,62 @@
+﻿<html>
+
+<head> 
+	 <script src="../Scripts/jquery-3.4.1.min.js"></script>
+	<script src="common.js"></script>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="common.css">
+	<link rel="stylesheet" href="_navbar.css">	 
+</head>
+<body>
+
+
+	<div class="wrapper">
+
+		<!-- Sidebar -->
+		<nav id="sidebar">
+			<div class="sidebar-header">
+				<h3><a href="orders.html">Отдел</a></h3>
+			</div>
+
+			<ul class="list-unstyled components" id="sidebardata">
+			</ul>
+				<h3><a href="recent.html">Журнал</a></h3>
+
+
+		</nav>
+
+		<div id="content">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<h3 id="order_title_state">Наименование отдела</h3>
+				<div class="container-fluid" id="state_actions">Общие действия</div>
+			</nav>
+			<div id="content_full_wait"> 
+				<h4>В очереди</h4>
+				<div id="content2_wait">
+				</div>
+				<nav class="navbar navbar-expand-lg navbar-light bg-light" id="summary_nav_wait"></nav>
+			</div>
+			<div id="content_full_active">
+				<h4>В работе</h4>
+				<div id="content2_active">
+				</div>
+				<nav class="navbar navbar-expand-lg navbar-light bg-light" id="summary_nav_active"></nav>
+			</div>
+		</div>
+
+
+
+</body>
+<script src="orders.js"> </script >
+</html>
+
+
+
+
+
+
+
+
+
+
+
