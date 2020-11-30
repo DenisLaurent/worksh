@@ -49,6 +49,7 @@ function createApi(api_url) {
      
     api['user_token_validate'] = api_action(api_url + 'user_token_validate/');
     api['client_login'] = api_action(api_url + 'client_login/');
+    api['client_login_code'] = api_action(api_url + 'client_login_code/');
     api['client_orders'] = api_action(api_url + 'client_orders/');
     api['client_order'] = api_action(api_url + 'client_order/');
     api['user'] = api_action(api_url + 'user/');
@@ -64,7 +65,7 @@ function createApi(api_url) {
         console.log(obj);
         var nms = Object.getOwnPropertyNames(obj);
         for (var i = 0; i <= nms.length - 1; i++) {
-            htmlString = htmlString.replace('{' + nms[i] + '}', obj[nms[i]]);
+            htmlString = htmlString.replaceAll('{' + nms[i] + '}', obj[nms[i]]);
         }
         return htmlString;
     };

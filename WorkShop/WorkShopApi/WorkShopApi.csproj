@@ -29,6 +29,12 @@
     <Content Update="wwwroot\import\js\jq.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\js\signin.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\js\orders.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\js\login.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -38,7 +44,7 @@
     <Content Update="wwwroot\login.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\signup.html">
+    <Content Update="wwwroot\signin.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\logs.html">

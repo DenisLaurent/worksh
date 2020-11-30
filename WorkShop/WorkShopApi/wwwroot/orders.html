@@ -1,36 +1,30 @@
 ﻿<html>
 
 <head>
-	<script src="../Scripts/jquery-3.4.1.min.js"></script>
-	<script src="common.js"></script>
-	<link rel="stylesheet" href="bootstrap.min.css">
-	<link rel="stylesheet" href="common.css">
-	<link rel="stylesheet" href="_navbar.css">
+	<meta charset="utf-8" />
+	<title>Вход в систему</title>
+	<link href="../css/common.css" rel="stylesheet" />
+	<script src="../import/js/jq.js"></script>
+	<script src="../js/common.js"></script>
 </head>
 <body topmargin="0">
-
-
-
-
+	 
 	<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
 		<tr valign="top">
-			<td align="center">
-
-
-
+			<td align="center"> 
 				<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
 					<tr valign="top" height="50px">
 						<td align="center" width="100px">
 							3ака3ы.
 						</td>
 						<td align="center" width="100px">
-							Журнал
+							<a href="logs.html">Журнал</a>
 						</td>
 						<td align="center" width="100px">
-							Настройки
+							<a href="logs.html"> Настройки</a>
 						</td>
 						<td align="right">
-							Выход
+							<a href="logs.html">Выход</a>
 						</td>
 					</tr>
 					<tr valign="top">
@@ -39,11 +33,13 @@
 								<tr valign="top">
 									<td align="center" width="200px">
 										<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" id="state_list">
-											<tr valign="top" height="50px">
-												<td align="center">
-													{state_name}({order_count})
-												</td>
-											</tr>
+											<tbody id="orders_state_list">
+												<tr valign="top" height="25px">
+													<td align="center">
+														{state_name}({order_count})
+													</td>
+												</tr>
+											</tbody>
 										</table>
 									</td>
 									<td align="center">
@@ -53,7 +49,8 @@
 													<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
 														<tr valign="middle" height="50px" id="actions_at_state">
 															<td align="left">
-																На3вание ЦЕХА.
+																<h4>На3вание ЦЕХА</h4>.<br />
+																					   <b>В очереди на приемку.</b>
 															</td>
 
 															<td align="center" width="100px">
@@ -64,9 +61,7 @@
 												</td>
 											</tr>
 											<tr valign="top">
-												<td align="center" width="200px">
-													queue
-
+												<td align="center" width="200px"> 
 
 
 													<table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -75,22 +70,22 @@
 																&nbsp;
 															</td>
 															<td align="center">
-																ID
+																<b>ID</b> 
 															</td>
 															<td align="center">
-																Дата
+																<b>Дата</b>
 															</td>
 															<td align="center">
-																Номер
+																<b>Номер</b>
 															</td>
 															<td align="center">
-																Клиент
+																<b>Клиент</b>
 															</td>
 															<td align="center">
-																Менеджер
-															</td>
+																<b>Менеджер</b>
+															</td> 
 															<td align="center">
-																Сумма
+																<b>Сумма</b>
 															</td>
 															<td align="center">
 																&nbsp;
@@ -112,10 +107,10 @@
 																	{orderNumber}
 																</td>
 																<td align="center">
-																	{clientName}
+																	<a href="#" onclick="clientinfo({client_id})">{clientName}</a>
 																</td>
 																<td align="center">
-																	{managerFIO}
+																	<a href="#" onclick="userinfo({manager_id})">{managerFIO}</a>
 																</td>
 																<td align="center">
 																	{orderSum}
@@ -131,14 +126,19 @@
 											<tr valign="top" height="50px">
 												<td align="center" width="200px">
 													<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
-														<tr valign="middle" height="50px"  id="actions_at_work_queue">
-															<td align="left">
-																В очереди на приемку.
-															</td>
-															<td align="center" width="100px">
+														<tr valign="middle" height="50px" id="actions_at_work_queue">
+
+															<td align="right" width="100px">
 																<button onclick="action_exec({id})">{actionName}</button>
 															</td>
 														</tr>
+														<tr valign="middle" height="50px" id="actions_at_work_queue">
+															<td align="left">
+																<b>	В работе</b>
+</td>
+
+														</tr>
+
 													</table>
 												</td>
 											</tr>
@@ -150,22 +150,22 @@
 																&nbsp;
 															</td>
 															<td align="center">
-																ID
+																<b>ID</b>
 															</td>
 															<td align="center">
-																Дата
+																<b>Дата</b>
 															</td>
 															<td align="center">
-																Номер
+																<b>Номер</b>
 															</td>
 															<td align="center">
-																Клиент
+																<b>Клиент</b>
 															</td>
 															<td align="center">
-																Менеджер
+																<b>Менеджер</b>
 															</td>
 															<td align="center">
-																Сумма
+																<b>Сумма</b>
 															</td>
 															<td align="center">
 																&nbsp;
@@ -186,10 +186,10 @@
 																	{orderNumber}
 																</td>
 																<td align="center">
-																	{clientName}
+																	<a href="#" onclick="clientinfo({client_id})">{clientName}</a>
 																</td>
 																<td align="center">
-																	{managerFIO}
+																	<a href="#" onclick="userinfo({manager_id})">{managerFIO}</a>
 																</td>
 																<td align="center">
 																	{orderSum}
@@ -207,14 +207,18 @@
 											<tr valign="top" height="50px">
 												<td align="center" width="200px">
 													<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
-														<tr valign="middle" height="50px"  id="actions_at_work_active">
-															<td align="left">
-																В работе
-															</td>
-															<td align="center" width="100px">
+														<tr valign="middle" height="50px" id="actions_at_work_active">
+
+															<td align="right" width="100px">
 																<button onclick="action_exec({id})">{actionName}</button>
 															</td>
 														</tr>
+														<tr valign="middle" height="50px" id="actions_at_work_active">
+															<td align="left">
+																<b>Приостановлены</b>
+</td> 
+														</tr>
+
 													</table>
 												</td>
 											</tr>
@@ -226,22 +230,22 @@
 																&nbsp;
 															</td>
 															<td align="center">
-																ID
+																<b>ID</b>
 															</td>
 															<td align="center">
-																Дата
+																<b>Дата</b>
 															</td>
 															<td align="center">
-																Номер
+																<b>Номер</b>
 															</td>
 															<td align="center">
-																Клиент
+																<b>Клиент</b>
 															</td>
 															<td align="center">
-																Менеджер
+																<b>Менеджер</b>
 															</td>
 															<td align="center">
-																Сумма
+																<b>Сумма</b>
 															</td>
 															<td align="center">
 																&nbsp;
@@ -262,10 +266,10 @@
 																	{orderNumber}
 																</td>
 																<td align="center">
-																	{clientName}
+																	<a href="#" onclick="clientinfo({client_id})">{clientName}</a>
 																</td>
 																<td align="center">
-																	{managerFIO}
+																	<a href="#" onclick="userinfo({manager_id})">{managerFIO}</a>
 																</td>
 																<td align="center">
 																	{orderSum}
@@ -285,7 +289,7 @@
 													<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
 														<tr valign="middle" height="50px" id="actions_at_work_wait">
 															<td align="left">
-																Приостановлены
+																
 															</td>
 
 															<td align="center" width="100px">
@@ -304,15 +308,9 @@
 				</table>
 			</td>
 		</tr>
-	</table>
-
-
-
-
-
-
+	</table> 
 </body>
-<script src="orders.js"></script>
+<script src="js/orders.js"></script>
 </html>
 
 
