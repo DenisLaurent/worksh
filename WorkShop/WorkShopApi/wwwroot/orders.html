@@ -1,53 +1,318 @@
 ﻿<html>
 
-<head> 
-	 <script src="../Scripts/jquery-3.4.1.min.js"></script>
+<head>
+	<script src="../Scripts/jquery-3.4.1.min.js"></script>
 	<script src="common.js"></script>
 	<link rel="stylesheet" href="bootstrap.min.css">
 	<link rel="stylesheet" href="common.css">
-	<link rel="stylesheet" href="_navbar.css">	 
+	<link rel="stylesheet" href="_navbar.css">
 </head>
-<body>
+<body topmargin="0">
 
 
-	<div class="wrapper">
-
-		<!-- Sidebar -->
-		<nav id="sidebar">
-			<div class="sidebar-header">
-				<h3><a href="orders.html">Отдел</a></h3>
-			</div>
-
-			<ul class="list-unstyled components" id="sidebardata">
-			</ul>
-				<h3><a href="recent.html">Журнал</a></h3>
 
 
-		</nav>
+	<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+		<tr valign="top">
+			<td align="center">
 
-		<div id="content">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<h3 id="order_title_state">Наименование отдела</h3>
-				<div class="container-fluid" id="state_actions">Общие действия</div>
-			</nav>
-			<div id="content_full_wait"> 
-				<h4>В очереди</h4>
-				<div id="content2_wait">
-				</div>
-				<nav class="navbar navbar-expand-lg navbar-light bg-light" id="summary_nav_wait"></nav>
-			</div>
-			<div id="content_full_active">
-				<h4>В работе</h4>
-				<div id="content2_active">
-				</div>
-				<nav class="navbar navbar-expand-lg navbar-light bg-light" id="summary_nav_active"></nav>
-			</div>
-		</div>
+
+
+				<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
+					<tr valign="top" height="50px">
+						<td align="center" width="100px">
+							3ака3ы.
+						</td>
+						<td align="center" width="100px">
+							Журнал
+						</td>
+						<td align="center" width="100px">
+							Настройки
+						</td>
+						<td align="right">
+							Выход
+						</td>
+					</tr>
+					<tr valign="top">
+						<td align="center" colspan="4">
+							<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
+								<tr valign="top">
+									<td align="center" width="200px">
+										<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" id="state_list">
+											<tr valign="top" height="50px">
+												<td align="center">
+													{state_name}({order_count})
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td align="center">
+										<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
+											<tr valign="top" height="50px">
+												<td align="center" width="200px">
+													<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
+														<tr valign="middle" height="50px" id="actions_at_state">
+															<td align="left">
+																На3вание ЦЕХА.
+															</td>
+
+															<td align="center" width="100px">
+																<button onclick="action_exec({id})">{actionName}</button>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr valign="top">
+												<td align="center" width="200px">
+													queue
+
+
+
+													<table width="100%" border="0" cellpadding="0" cellspacing="0">
+														<tr valign="top" height="20px">
+															<td align="center">
+																&nbsp;
+															</td>
+															<td align="center">
+																ID
+															</td>
+															<td align="center">
+																Дата
+															</td>
+															<td align="center">
+																Номер
+															</td>
+															<td align="center">
+																Клиент
+															</td>
+															<td align="center">
+																Менеджер
+															</td>
+															<td align="center">
+																Сумма
+															</td>
+															<td align="center">
+																&nbsp;
+															</td>
+														</tr>
+
+														<tbody id="orders_at_work_is_queued">
+															<tr valign="top" height="20px">
+																<td align="center">
+																	<input type="checkbox" id="ch_{id}" onclick="recalc_checked()" />
+																</td>
+																<td align="center">
+																	{id}
+																</td>
+																<td align="center">
+																	{orderDate}
+																</td>
+																<td align="center">
+																	{orderNumber}
+																</td>
+																<td align="center">
+																	{clientName}
+																</td>
+																<td align="center">
+																	{managerFIO}
+																</td>
+																<td align="center">
+																	{orderSum}
+																</td>
+																<td align="center">
+																	<button onclick="order_detail({id})">Открыть</button>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+											<tr valign="top" height="50px">
+												<td align="center" width="200px">
+													<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
+														<tr valign="middle" height="50px"  id="actions_at_work_queue">
+															<td align="left">
+																В очереди на приемку.
+															</td>
+															<td align="center" width="100px">
+																<button onclick="action_exec({id})">{actionName}</button>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr valign="top">
+												<td align="center" width="200px">
+													<table width="100%" border="0" cellpadding="0" cellspacing="0">
+														<tr valign="top" height="20px">
+															<td align="center">
+																&nbsp;
+															</td>
+															<td align="center">
+																ID
+															</td>
+															<td align="center">
+																Дата
+															</td>
+															<td align="center">
+																Номер
+															</td>
+															<td align="center">
+																Клиент
+															</td>
+															<td align="center">
+																Менеджер
+															</td>
+															<td align="center">
+																Сумма
+															</td>
+															<td align="center">
+																&nbsp;
+															</td>
+														</tr>
+														<tbody id="orders_at_work_is_active">
+															<tr valign="top" height="20px">
+																<td align="center">
+																	<input type="checkbox" id="ch_{id}" onclick="recalc_checked()" />
+																</td>
+																<td align="center">
+																	{id}
+																</td>
+																<td align="center">
+																	{orderDate}
+																</td>
+																<td align="center">
+																	{orderNumber}
+																</td>
+																<td align="center">
+																	{clientName}
+																</td>
+																<td align="center">
+																	{managerFIO}
+																</td>
+																<td align="center">
+																	{orderSum}
+																</td>
+																<td align="center">
+																	<button onclick="order_detail({id})">Открыть</button>
+																</td>
+															</tr>
+														</tbody>
+
+													</table>
+												</td>
+
+											</tr>
+											<tr valign="top" height="50px">
+												<td align="center" width="200px">
+													<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
+														<tr valign="middle" height="50px"  id="actions_at_work_active">
+															<td align="left">
+																В работе
+															</td>
+															<td align="center" width="100px">
+																<button onclick="action_exec({id})">{actionName}</button>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr valign="top">
+												<td align="center" width="200px">
+													<table width="100%" border="0" cellpadding="0" cellspacing="0">
+														<tr valign="top" height="20px">
+															<td align="center">
+																&nbsp;
+															</td>
+															<td align="center">
+																ID
+															</td>
+															<td align="center">
+																Дата
+															</td>
+															<td align="center">
+																Номер
+															</td>
+															<td align="center">
+																Клиент
+															</td>
+															<td align="center">
+																Менеджер
+															</td>
+															<td align="center">
+																Сумма
+															</td>
+															<td align="center">
+																&nbsp;
+															</td>
+														</tr>
+														<tbody id="orders_at_work_is_wait">
+															<tr valign="top" height="20px">
+																<td align="center">
+																	<input type="checkbox" id="ch_{id}" onclick="recalc_checked()" />
+																</td>
+																<td align="center">
+																	{id}
+																</td>
+																<td align="center">
+																	{orderDate}
+																</td>
+																<td align="center">
+																	{orderNumber}
+																</td>
+																<td align="center">
+																	{clientName}
+																</td>
+																<td align="center">
+																	{managerFIO}
+																</td>
+																<td align="center">
+																	{orderSum}
+																</td>
+																<td align="center">
+																	<button onclick="order_detail({id})">Открыть</button>
+																</td>
+															</tr>
+														</tbody>
+
+													</table>
+												</td>
+
+											</tr>
+											<tr valign="top" height="50px">
+												<td align="center" width="200px">
+													<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
+														<tr valign="middle" height="50px" id="actions_at_work_wait">
+															<td align="left">
+																Приостановлены
+															</td>
+
+															<td align="center" width="100px">
+																<button onclick="action_exec({id})">{actionName}</button>
+															</td> 
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+
+
 
 
 
 </body>
-<script src="orders.js"> </script >
+<script src="orders.js"></script>
 </html>
 
 

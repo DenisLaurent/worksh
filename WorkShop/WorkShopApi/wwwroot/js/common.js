@@ -1,6 +1,6 @@
 ﻿   
 function err(msg) {
-
+    alert(msg);
 
 
 };
