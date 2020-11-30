@@ -22,7 +22,7 @@ function api_action(methodName) {
             url: methodName,
             data: js,
             success: function (resp) {
-                res = JSON.parse(resp);
+                res =  resp ;
             },
             dataType: 'json'
             });
@@ -59,27 +59,36 @@ function createApi(api_url) {
 
    
     api.renderObject = function (ee, obj) {
-        var htmlString = "";
+        var htmlString = ee;
+        console.log(ee);
+        console.log(obj);
         var nms = Object.getOwnPropertyNames(obj);
         for (var i = 0; i <= nms.length - 1; i++) {
-            htmlString += ee.replace('{' + nms[i] + '}', obj[nms[i]]);
+            htmlString = htmlString.replace('{' + nms[i] + '}', obj[nms[i]]);
         }
         return htmlString;
     };
 
     api.renderArray = function (e_id, objarr) {
 
-        var html = $('#' + e_id).html();
-
+        var html = "";
+        console.log(e_id);
+        var html_item = $('#' + e_id  ).html();
         for (var j = 0; j <= objarr.length - 1; j++) {
             html += this.renderObject(html_item, objarr[j]);
-        };
-
+        }; 
         return html;
 
     };
-       
 
+    api.renderLogin = function (lst) {
+
+
+        var h = this.renderArray('rootid_item', lst);
+        $('#rootid').html(h);
+
+
+    };
     return api;
 
 };

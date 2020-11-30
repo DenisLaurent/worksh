@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJECTS\\WorkShop\\WorkShop\\WorkShopApi\\WorkShopApi.csproj": {}
+    "D:\\_PROJ\\ws\\WorkShop\\WorkShopApi\\WorkShopApi.csproj": {}
   },
   "projects": {
-    "D:\\PROJECTS\\WorkShop\\WorkShop\\WorkShopApi\\WorkShopApi.csproj": {
+    "D:\\_PROJ\\ws\\WorkShop\\WorkShopApi\\WorkShopApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJECTS\\WorkShop\\WorkShop\\WorkShopApi\\WorkShopApi.csproj",
+        "projectUniqueName": "D:\\_PROJ\\ws\\WorkShop\\WorkShopApi\\WorkShopApi.csproj",
         "projectName": "WorkShopApi",
-        "projectPath": "D:\\PROJECTS\\WorkShop\\WorkShop\\WorkShopApi\\WorkShopApi.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJECTS\\WorkShop\\WorkShop\\WorkShopApi\\obj\\",
+        "projectPath": "D:\\_PROJ\\ws\\WorkShop\\WorkShopApi\\WorkShopApi.csproj",
+        "packagesPath": "C:\\Users\\Garry\\.nuget\\packages\\",
+        "outputPath": "D:\\_PROJ\\ws\\WorkShop\\WorkShopApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Garry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -30,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -69,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
